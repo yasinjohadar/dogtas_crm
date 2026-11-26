@@ -1,0 +1,19 @@
+
+{
+  "name": "dogtas-crm",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dogtas CRM Backend",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql2": "^3.14.0",
+    "dotenv": "^16.5.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "express-rate-limit": "^8.0.0"
+  }
+}

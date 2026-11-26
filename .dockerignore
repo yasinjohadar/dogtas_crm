@@ -1,0 +1,9 @@
+**/node_modules
+**/.env
+**/.env.*
+dogtas-crm/dist
+salescrm_backend/public
+salescrm_backend/tmp
+*.sql
+db
+.git

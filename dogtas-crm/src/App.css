@@ -1,0 +1,487 @@
+
+:root {
+  font-family: Tahoma, Arial, sans-serif;
+  color: #233449;
+  background: #f4f6fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button, select {
+  font: inherit;
+}
+
+.crm {
+  min-height: 100vh;
+  background: #f4f6fa;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 235px;
+  background: #142b42;
+  color: white;
+  padding: 24px 13px;
+}
+
+.sidebar h2 {
+  font-size: 19px;
+  margin: 4px 12px 25px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #cbd6e4;
+  text-align: right;
+  cursor: pointer;
+}
+
+.sidebar button.active,
+.sidebar button:hover {
+  background: #29475f;
+  color: white;
+}
+
+.menu-icon {
+  font-size: 20px;
+}
+
+.sidebar-footer {
+  margin: 30px 10px;
+  font-size: 11px;
+  color: #a6b8cb;
+}
+
+.main {
+  margin-right: 235px;
+  padding: 28px;
+  max-width: 1700px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 23px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.topbar p {
+  color: #708095;
+  font-size: 13px;
+}
+
+.topbar select {
+  padding: 11px;
+  border: 1px solid #d6dfeb;
+  border-radius: 9px;
+  background: white;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e1e7ef;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px #162b4210;
+}
+
+.stat small {
+  color: #708095;
+}
+
+.stat strong {
+  display: block;
+  margin-top: 12px;
+  font-size: 28px;
+  color: #142b42;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.card h3 {
+  font-size: 17px;
+  margin-top: 0;
+}
+
+.empty {
+  padding: 35px;
+  text-align: center;
+  color: #708095;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 13px;
+  text-align: right;
+  border-bottom: 1px solid #edf0f4;
+  font-size: 13px;
+}
+
+th {
+  background: #f7f9fc;
+  color: #50627b;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 68px;
+    padding: 15px 7px;
+  }
+
+  .sidebar h2,
+  .menu-label,
+  .sidebar-footer {
+    display: none;
+  }
+
+  .sidebar button {
+    justify-content: center;
+  }
+
+  .main {
+    margin-right: 68px;
+    padding: 15px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  .topbar {
+    flex-wrap: wrap;
+  }
+
+  .stat strong {
+    font-size: 23px;
+  }
+}
+
+.customers-toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.customers-toolbar input {
+  flex: 1;
+}
+
+.crm-btn {
+  border: none;
+  border-radius: 9px;
+  background: #2463a0;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.crm-btn.secondary {
+  background: #e9eff6;
+  color: #142b42;
+}
+
+.crm-btn.danger {
+  background: #b63843;
+}
+
+.crm-status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: #edf2fa;
+  color: #36547c;
+  font-size: 12px;
+}
+
+.customers-toolbar input,
+.crm-form-grid input,
+.crm-form-grid select,
+.crm-form-grid textarea {
+  padding: 11px;
+  border: 1px solid #d6dfeb;
+  border-radius: 9px;
+  background: white;
+  color: #233449;
+  min-width: 0;
+}
+
+.crm-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: #0a172c80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 100;
+}
+
+.crm-modal {
+  width: 100%;
+  max-width: 720px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.crm-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.crm-form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 13px;
+}
+
+.crm-form-grid .full {
+  grid-column: 1 / -1;
+}
+
+.crm-form-grid textarea {
+  min-height: 85px;
+}
+
+.crm-modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .customers-toolbar {
+    flex-direction: column;
+  }
+
+  .crm-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .crm-form-grid .full {
+    grid-column: auto;
+  }
+}
+
+.crm-chart-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 35px;
+  align-items: center;
+  gap: 12px;
+  margin: 15px 0;
+  font-size: 13px;
+}
+
+.crm-chart-track {
+  height: 11px;
+  background: #e9eef5;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.crm-chart-fill {
+  height: 100%;
+  background: #4d85c1;
+  border-radius: 20px;
+}
+
+.crm-chart-row strong {
+  text-align: center;
+  color: #142b42;
+}
+
+@media (max-width: 550px) {
+  .crm-chart-row {
+    grid-template-columns: 90px 1fr 25px;
+    gap: 7px;
+    font-size: 11px;
+  }
+}
+
+
+/* DOGTAS CRM - BEIGE & GOLD */
+
+:root {
+  --cream: #FAF7F2;
+  --beige: #EDE3D4;
+  --gold: #B08A4A;
+  --gold-dark: #89672F;
+  --brown: #493A2B;
+  --muted: #786B5D;
+  --border: #E5D9C9;
+
+  color: var(--brown);
+  background: var(--cream);
+}
+
+body,
+.crm {
+  background: var(--cream);
+  color: var(--brown);
+}
+
+.sidebar {
+  background: var(--beige);
+  color: var(--brown);
+  border-left: 1px solid var(--border);
+}
+
+.sidebar h2,
+.sidebar button {
+  color: var(--brown);
+}
+
+.sidebar button.active,
+.sidebar button:hover {
+  background: var(--gold);
+  color: white;
+}
+
+.sidebar-footer,
+.topbar p,
+.stat small,
+.empty {
+  color: var(--muted);
+}
+
+.topbar h1,
+.card h3,
+.crm-chart-row strong {
+  color: var(--brown);
+}
+
+.card {
+  background: white;
+  border-color: var(--border);
+  box-shadow: 0 3px 14px rgba(73, 58, 43, 0.06);
+}
+
+.stat strong {
+  color: var(--gold-dark);
+}
+
+th {
+  background: #F5EEE5;
+  color: var(--brown);
+}
+
+th,
+td {
+  border-bottom-color: var(--border);
+}
+
+.crm-btn {
+  background: var(--gold);
+  color: white;
+}
+
+.crm-btn:hover:not(:disabled) {
+  background: var(--gold-dark);
+}
+
+.crm-btn.secondary {
+  background: #F5EEE5;
+  color: var(--brown);
+}
+
+.crm-btn.danger {
+  background: #A84E49;
+  color: white;
+}
+
+.crm-status {
+  background: #F5EEE5;
+  color: var(--gold-dark);
+}
+
+.topbar select,
+.customers-toolbar input,
+.crm-form-grid input,
+.crm-form-grid select,
+.crm-form-grid textarea {
+  background: white;
+  border-color: var(--border);
+  color: var(--brown);
+}
+
+.crm-modal {
+  background: var(--cream);
+}
+
+.crm-modal-overlay {
+  background: rgba(45, 35, 25, 0.55);
+}
+
+.crm-chart-track {
+  background: #EDE3D4;
+}
+
+.crm-chart-fill {
+  background: var(--gold);
+}
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+

@@ -1,0 +1,8 @@
+node_modules/
+.env
+.env.*
+!.env.example
+dogtas-crm/dist/
+salescrm_backend/tmp/
+salescrm_backend/public/*.zip
+dogtas_crm_local.sql
